@@ -3,13 +3,13 @@
 
 void function();
 
-int gvar1 = 0;
-int gvar2 = 10;
+int gvar1 = 0;      // BSS
+int gvar2 = 10;     // Data Segment
 
-static int svar1 = 0;
-static int svar2 = 11;
+static int svar1 = 0;       // BSS
+static int svar2 = 11;      // Data Segment
 
-int main(){
+int main(){     // Everything inside the function is in stack segment even the parameters
     int lvar1 = 0;
     int lvar2 = 111;
     int lvar3;
@@ -17,12 +17,18 @@ int main(){
     static int svar3;
     static int svar4 = 1100;
 
+    int *ptr = NULL;
+
+    ptr = (int *)malloc(100);
+
     function();
 
     printf("\ngvar1 = %p , gvar2 = %p , svar1 = %p , svar2 = %p , lvar1 = %p , lvar2 = %p , lvar3 = %p\n",&gvar1,&gvar2,&svar1,&svar2,&lvar1,&lvar2,&lvar3);
     printf("\nsvar3 = %p , svar4 = %p\n",&svar3,&svar4);
 
     printf("\nfunction = %p , main = %p\n",function,main);
+
+    printf("\nptr = %p , &ptr = %p\n",ptr,&ptr); // Remember the ptr is pointing inside heap but its own address is in stack
 
     getchar();
 

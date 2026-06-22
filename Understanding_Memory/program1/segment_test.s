@@ -29,6 +29,8 @@ svar2:
 	.string	"\nsvar3 = %p , svar4 = %p\n"
 .LC2:
 	.string	"\nfunction = %p , main = %p\n"
+.LC3:
+	.string	"\nptr = %p , &ptr = %p\n"
 	.text
 	.globl	main
 	.type	main, @function
@@ -45,14 +47,18 @@ main:
 	movq	%fs:40, %rax
 	movq	%rax, -8(%rbp)
 	xorl	%eax, %eax
-	movl	$0, -20(%rbp)
-	movl	$111, -16(%rbp)
+	movl	$0, -28(%rbp)
+	movl	$111, -24(%rbp)
+	movq	$0, -16(%rbp)
+	movl	$100, %edi
+	call	malloc@PLT
+	movq	%rax, -16(%rbp)
 	movl	$0, %eax
 	call	function
-	leaq	-20(%rbp), %rdx
-	leaq	-12(%rbp), %rax
+	leaq	-28(%rbp), %rdx
+	leaq	-20(%rbp), %rax
 	pushq	%rax
-	leaq	-16(%rbp), %rax
+	leaq	-24(%rbp), %rax
 	pushq	%rax
 	movq	%rdx, %r9
 	leaq	svar2(%rip), %r8
@@ -83,6 +89,13 @@ main:
 	movq	%rax, %rdi
 	movl	$0, %eax
 	call	printf@PLT
+	movq	-16(%rbp), %rax
+	leaq	-16(%rbp), %rdx
+	movq	%rax, %rsi
+	leaq	.LC3(%rip), %rax
+	movq	%rax, %rdi
+	movl	$0, %eax
+	call	printf@PLT
 	call	getchar@PLT
 	movl	$0, %eax
 	movq	-8(%rbp), %rdx
@@ -97,7 +110,7 @@ main:
 .LFE6:
 	.size	main, .-main
 	.section	.rodata
-.LC3:
+.LC4:
 	.string	"\n%d + %d = %d"
 	.text
 	.globl	function
@@ -120,7 +133,7 @@ function:
 	movl	-4(%rbp), %edx
 	movl	-8(%rbp), %eax
 	movl	%eax, %esi
-	leaq	.LC3(%rip), %rax
+	leaq	.LC4(%rip), %rax
 	movq	%rax, %rdi
 	movl	$0, %eax
 	call	printf@PLT

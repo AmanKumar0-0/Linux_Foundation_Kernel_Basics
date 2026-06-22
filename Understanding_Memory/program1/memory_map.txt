@@ -1,0 +1,50 @@
+aman@aman-HP-250-G8-Notebook-PC:~$ cat /proc/3171/maps 
+
+5bd988ecf000-5bd988eff000 r--p 00000000 08:02 10224188                   /usr/bin/bash
+5bd988eff000-5bd988fee000 r-xp 00030000 08:02 10224188                   /usr/bin/bash
+5bd988fee000-5bd989023000 r--p 0011f000 08:02 10224188                   /usr/bin/bash
+5bd989023000-5bd989027000 r--p 00154000 08:02 10224188                   /usr/bin/bash
+5bd989027000-5bd989030000 rw-p 00158000 08:02 10224188                   /usr/bin/bash
+5bd989030000-5bd98903b000 rw-p 00000000 00:00 0 
+5bd9bf4a8000-5bd9bf670000 rw-p 00000000 00:00 0                          [heap]
+7e28ff600000-7e29003ec000 r--p 00000000 08:02 10229662                   /usr/lib/locale/locale-archive
+7e2900400000-7e2900428000 r--p 00000000 08:02 10239169                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7e2900428000-7e29005b0000 r-xp 00028000 08:02 10239169                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7e29005b0000-7e29005ff000 r--p 001b0000 08:02 10239169                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7e29005ff000-7e2900603000 r--p 001fe000 08:02 10239169                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7e2900603000-7e2900605000 rw-p 00202000 08:02 10239169                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7e2900605000-7e2900612000 rw-p 00000000 00:00 0 
+7e290069a000-7e290069d000 rw-p 00000000 00:00 0 
+7e290069d000-7e29006ab000 r--p 00000000 08:02 10239782                   /usr/lib/x86_64-linux-gnu/libtinfo.so.6.4
+7e29006ab000-7e29006be000 r-xp 0000e000 08:02 10239782                   /usr/lib/x86_64-linux-gnu/libtinfo.so.6.4
+7e29006be000-7e29006cc000 r--p 00021000 08:02 10239782                   /usr/lib/x86_64-linux-gnu/libtinfo.so.6.4
+7e29006cc000-7e29006d0000 r--p 0002e000 08:02 10239782                   /usr/lib/x86_64-linux-gnu/libtinfo.so.6.4
+7e29006d0000-7e29006d1000 rw-p 00032000 08:02 10239782                   /usr/lib/x86_64-linux-gnu/libtinfo.so.6.4
+7e29006e4000-7e29006eb000 r--s 00000000 08:02 10240787                   /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7e29006eb000-7e29006ed000 rw-p 00000000 00:00 0 
+7e29006ed000-7e29006f1000 r--p 00000000 00:00 0                          [vvar]
+7e29006f1000-7e29006f3000 r--p 00000000 00:00 0                          [vvar_vclock]
+7e29006f3000-7e29006f5000 r-xp 00000000 00:00 0                          [vdso]
+7e29006f5000-7e29006f6000 r--p 00000000 08:02 10238965                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7e29006f6000-7e2900721000 r-xp 00001000 08:02 10238965                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7e2900721000-7e290072b000 r--p 0002c000 08:02 10238965                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7e290072b000-7e290072d000 r--p 00036000 08:02 10238965                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7e290072d000-7e290072f000 rw-p 00038000 08:02 10238965                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7ffc76dd4000-7ffc76df5000 rw-p 00000000 00:00 0                          [stack]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]
+
+
+
+----------------------------OUTPUT-----------------------------------------------------------------
+
+aman@aman-HP-250-G8-Notebook-PC:~/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/program1$ ./segment_test 
+
+10 + 100 = 110
+gvar1 = 0x5cf3255c0020 , gvar2 = 0x5cf3255c0010 , svar1 = 0x5cf3255c0024 , svar2 = 0x5cf3255c0014 , lvar1 = 0x7ffc37492994 , lvar2 = 0x7ffc37492998 , lvar3 = 0x7ffc3749299c
+
+svar3 = 0x5cf3255c0028 , svar4 = 0x5cf3255c0018
+
+function = 0x5cf3255bd2cf , main = 0x5cf3255bd1a9
+
+ptr = 0x5cf344aa62a0 , &ptr = 0x7ffc374929a0
+

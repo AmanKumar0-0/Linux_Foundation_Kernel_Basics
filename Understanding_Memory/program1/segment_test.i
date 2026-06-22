@@ -1932,12 +1932,22 @@ int main(){
     static int svar3;
     static int svar4 = 1100;
 
+    int *ptr = 
+# 20 "segment_test.c" 3 4
+              ((void *)0)
+# 20 "segment_test.c"
+                  ;
+
+    ptr = (int *)malloc(100);
+
     function();
 
     printf("\ngvar1 = %p , gvar2 = %p , svar1 = %p , svar2 = %p , lvar1 = %p , lvar2 = %p , lvar3 = %p\n",&gvar1,&gvar2,&svar1,&svar2,&lvar1,&lvar2,&lvar3);
     printf("\nsvar3 = %p , svar4 = %p\n",&svar3,&svar4);
 
     printf("\nfunction = %p , main = %p\n",function,main);
+
+    printf("\nptr = %p , &ptr = %p\n",ptr,&ptr);
 
     getchar();
 
