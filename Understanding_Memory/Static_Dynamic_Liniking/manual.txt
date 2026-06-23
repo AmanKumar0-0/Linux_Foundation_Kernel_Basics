@@ -1,0 +1,50 @@
+aman@aman-HP-250-G8-Notebook-PC:~/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/Static_Dynamic_Liniking$ sudo apt install libc6-dev
+
+[sudo] password for aman: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+libc6-dev is already the newest version (2.39-0ubuntu8.7).
+libc6-dev set to manually installed.
+The following packages were automatically installed and are no longer required:
+  libfwupd2 libwoff1 python3-compose python3-docker python3-dockerpty python3-docopt python3-dotenv python3-texttable python3-websocket
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 29 not upgraded.
+
+/****************************************************** Make sure the hello.c is in same directory ********************************************************************/
+aman@aman-HP-250-G8-Notebook-PC:~/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/Static_Dynamic_Liniking$ ./dynamic_build.sh 
+Dynamically Building the file :)
+total 20
+drwxrwxr-x 2 aman aman 4096 Jun 23 22:05 .
+drwxrwxr-x 5 aman aman 4096 Jun 23 22:00 ..
+-rwxrwxr-x 1 aman aman   77 Jun 23 22:05 dynamic_build.sh
+-rw-rw-r-- 1 aman aman   80 Jun 23 22:01 hello.c
+-rw-rw-r-- 1 aman aman  722 Jun 23 22:03 manual.txt
+
+/***************************************************** Make sure to add the executable permission to the .sh files ***************************************************/
+$ chmod +x file_name.sh
+
+/***************************************************** Output and the size comparison ********************************************************************************/
+
+aman@aman-HP-250-G8-Notebook-PC:~/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/Static_Dynamic_Liniking$ ./dynamic_link_build.sh 
+
+Dynamically Building the file :)\n
+hello_dynamic: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=dc1de19ef51ae96843681e8daaa6b56b67078bc2, for GNU/Linux 3.2.0, not stripped
+	linux-vdso.so.1 (0x00007e6bf765e000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007e6bf7400000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007e6bf7660000)
+Hello, World!
+   text	   data	    bss	    dec	    hex	filename
+   1376	    600	      8	   1984	    7c0	hello_dynamic
+
+
+aman@aman-HP-250-G8-Notebook-PC:~/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/Static_Dynamic_Liniking$ ./static_link_build.sh 
+
+Static Linking the file :)
+hello_static: ELF 64-bit LSB executable, x86-64, version 1 (GNU/Linux), statically linked, BuildID[sha1]=0f899528997769b27bcd63de21dbd22bb51470e0, for GNU/Linux 3.2.0, not stripped
+	not a dynamic executable
+   text	   data	    bss	    dec	    hex	filename
+ 668337	  23376	  22472	 714185	  ae5c9	hello_static
+Hello, World!
+aman@aman-HP-250-G8-Notebook-PC:~/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/Static_Dynamic_Liniking$ 
+
