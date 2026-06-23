@@ -1,0 +1,15 @@
+
+/********************************************************** For checking the segment of each section of memory *******************************************************/
+
+aman@aman-HP-250-G8-Notebook-PC:~/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/memory_segment_test1$ size segment_test.o 
+   text	   data	    bss	    dec	    hex	filename
+    662	     12	     12	    686	    2ae	segment_test.o
+
+
+/********************************************************* How to identify which memory address is in which segment *************************************************/
+
+Text(.text) ---> Machine code instructions, string literals ---> r-x (read + executable) ---> Known at compile time
+Data(.data) ---> Initialized global and static variables ---> rw- (read + write) ---> known at compile time
+BSS(.bss) ---> Uninitialized global and static variables ---> rw- (read + write) ---> known at compile time
+Heap ---> malloc/calloc allocations, library internals ---> rw- (read + write) ---> Dynamic (grows upward)
+Stack ---> Local variables, function frames, return addresses ---> rw- (read + write) Dynamic (grows downward)
