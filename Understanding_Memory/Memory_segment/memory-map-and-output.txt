@@ -1,0 +1,45 @@
+aman@aman-HP-250-G8-Notebook-PC:~$ cat /proc/8462/maps 
+
+5730f6e71000-5730f6e72000 r--p 00000000 08:02 11296796                   /home/aman/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/Memory_segment/segment
+5730f6e72000-5730f6e73000 r-xp 00001000 08:02 11296796                   /home/aman/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/Memory_segment/segment
+5730f6e73000-5730f6e74000 r--p 00002000 08:02 11296796                   /home/aman/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/Memory_segment/segment
+5730f6e74000-5730f6e75000 r--p 00002000 08:02 11296796                   /home/aman/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/Memory_segment/segment
+5730f6e75000-5730f6e76000 rw-p 00003000 08:02 11296796                   /home/aman/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/Memory_segment/segment
+573124874000-573124895000 rw-p 00000000 00:00 0                          [heap]
+781eec800000-781eec828000 r--p 00000000 08:02 10239169                   /usr/lib/x86_64-linux-gnu/libc.so.6
+781eec828000-781eec9b0000 r-xp 00028000 08:02 10239169                   /usr/lib/x86_64-linux-gnu/libc.so.6
+781eec9b0000-781eec9ff000 r--p 001b0000 08:02 10239169                   /usr/lib/x86_64-linux-gnu/libc.so.6
+781eec9ff000-781eeca03000 r--p 001fe000 08:02 10239169                   /usr/lib/x86_64-linux-gnu/libc.so.6
+781eeca03000-781eeca05000 rw-p 00202000 08:02 10239169                   /usr/lib/x86_64-linux-gnu/libc.so.6
+781eeca05000-781eeca12000 rw-p 00000000 00:00 0 
+781eeca89000-781eeca8c000 rw-p 00000000 00:00 0 
+781eecaa6000-781eecaa8000 rw-p 00000000 00:00 0 
+781eecaa8000-781eecaac000 r--p 00000000 00:00 0                          [vvar]
+781eecaac000-781eecaae000 r--p 00000000 00:00 0                          [vvar_vclock]
+781eecaae000-781eecab0000 r-xp 00000000 00:00 0                          [vdso]
+781eecab0000-781eecab1000 r--p 00000000 08:02 10238965                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+781eecab1000-781eecadc000 r-xp 00001000 08:02 10238965                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+781eecadc000-781eecae6000 r--p 0002c000 08:02 10238965                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+781eecae6000-781eecae8000 r--p 00036000 08:02 10238965                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+781eecae8000-781eecaea000 rw-p 00038000 08:02 10238965                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7ffc9e03a000-7ffc9e05b000 rw-p 00000000 00:00 0                          [stack]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]
+
+
+========================================= OUTPUT ===========================================================================
+
+
+aman@aman-HP-250-G8-Notebook-PC:~/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/Memory_segment$ ./segment
+ 
+==== Memory Segment Addresses ====
+
+TEXT (main function):	0x5730f6e721e9
+TEXT (string literal):	0x5730f6e73008
+DATA (global initialized):	0x5730f6e75010
+DATA (global uninitialized):	0x5730f6e75024
+HEAP (malloc pointer):    0x5731248742a0
+STACK (local variable):    0x7ffc9e0581fc
+
+PID: 8462
+Print ENTER to view /proc/PID/maps......
+
