@@ -1,0 +1,7 @@
+/******************************************* Checking the page size Allocated by the os *******************************************************/
+aman@aman-HP-250-G8-Notebook-PC:~/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/page_based_memory_allocation$ getconf PAGE_SIZE
+4096		( 4 KB - default on most linux system)
+
+aman@aman-HP-250-G8-Notebook-PC:~/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/page_based_memory_allocation$ python3 page_calculation.py 
+33 pages
+
