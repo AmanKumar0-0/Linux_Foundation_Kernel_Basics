@@ -1,0 +1,51 @@
+/***************************************** Output ***********************************************/
+aman@aman-HP-250-G8-Notebook-PC:~/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/heap_explore$ ./heap_explore 
+PID: 7444
+============ Pointer Variable ( On stack) =========================
+	&p1 = 0x7ffdc795e9e8
+	&p2 = 0x7ffdc795e9f0
+	&p3 = 0x7ffdc795e9f8
+	&p4 = 0x7ffdc795ea00
+=========== Heap Allocation ( On Heap) =============================
+	p1 -> 0x60ec845646b0	(100 bytes)
+	p2 -> 0x60ec84564720	(1000 bytes)
+	p3 -> 0x60ec84564b10	(10000 bytes)
+	p4 -> 0x60ec84567230	(100000 bytes)
+Please ENTER to exit testing........
+
+
+/******************************************* Memory Maps *******************************/
+
+aman@aman-HP-250-G8-Notebook-PC:~$ cat /proc/7444/maps
+60ec66851000-60ec66852000 r--p 00000000 08:02 11308116                   /home/aman/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/heap_explore/heap_explore
+60ec66852000-60ec66853000 r-xp 00001000 08:02 11308116                   /home/aman/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/heap_explore/heap_explore
+60ec66853000-60ec66854000 r--p 00002000 08:02 11308116                   /home/aman/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/heap_explore/heap_explore
+60ec66854000-60ec66855000 r--p 00002000 08:02 11308116                   /home/aman/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/heap_explore/heap_explore
+60ec66855000-60ec66856000 rw-p 00003000 08:02 11308116                   /home/aman/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/heap_explore/heap_explore
+60ec84564000-60ec84585000 rw-p 00000000 00:00 0                          [heap]
+7a8121c00000-7a8121c28000 r--p 00000000 08:02 10239169                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7a8121c28000-7a8121db0000 r-xp 00028000 08:02 10239169                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7a8121db0000-7a8121dff000 r--p 001b0000 08:02 10239169                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7a8121dff000-7a8121e03000 r--p 001fe000 08:02 10239169                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7a8121e03000-7a8121e05000 rw-p 00202000 08:02 10239169                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7a8121e05000-7a8121e12000 rw-p 00000000 00:00 0 
+7a8121ffd000-7a8122000000 rw-p 00000000 00:00 0 
+7a812201a000-7a812201c000 rw-p 00000000 00:00 0 
+7a812201c000-7a8122020000 r--p 00000000 00:00 0                          [vvar]
+7a8122020000-7a8122022000 r--p 00000000 00:00 0                          [vvar_vclock]
+7a8122022000-7a8122024000 r-xp 00000000 00:00 0                          [vdso]
+7a8122024000-7a8122025000 r--p 00000000 08:02 10238965                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7a8122025000-7a8122050000 r-xp 00001000 08:02 10238965                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7a8122050000-7a812205a000 r--p 0002c000 08:02 10238965                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7a812205a000-7a812205c000 r--p 00036000 08:02 10238965                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7a812205c000-7a812205e000 rw-p 00038000 08:02 10238965                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7ffdc7940000-7ffdc7961000 rw-p 00000000 00:00 0                          [stack]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]
+
+/**************************************** Section Size *************************************/
+aman@aman-HP-250-G8-Notebook-PC:~/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/heap_explore$ size heap_explore
+   text	   data	    bss	    dec	    hex	filename
+   2694	    648	      8	   3350	    d16	heap_explore
+aman@aman-HP-250-G8-Notebook-PC:~/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Understanding_Memory/heap_explore$ 
+
+
