@@ -1,0 +1,8 @@
+aman@aman-HP-250-G8-Notebook-PC:~/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Variable_Adv/mul_definition_error$ gcc multi1.c multi2.c multi3.c multi_final.c -o multi_test
+/usr/bin/ld: /tmp/ccaNt4Sb.o:(.data+0x0): multiple definition of `a'; /tmp/ccNyI12X.o:(.data+0x0): first defined here
+/usr/bin/ld: /tmp/ccsgrcmd.o:(.data+0x0): multiple definition of `a'; /tmp/ccNyI12X.o:(.data+0x0): first defined here
+collect2: error: ld returned 1 exit status
+
+aman@aman-HP-250-G8-Notebook-PC:~/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Variable_Adv/mul_definition_error$ ls
+multi1.c  multi2.c  multi3.c  multi_final.c
+
