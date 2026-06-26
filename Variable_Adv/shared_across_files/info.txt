@@ -1,0 +1,8 @@
+aman@aman-HP-250-G8-Notebook-PC:~/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Variable_Adv/shared_across_files$ ls
+def_file1.c  def_file2.c  def_test
+aman@aman-HP-250-G8-Notebook-PC:~/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Variable_Adv/shared_across_files$ ./def_test 
+[file2] counter = 100, address = 0x5a0decd9b010
+[file] counter = 100, address = 0x5a0decd9b010
+[file2] after modification counter = 200, address = 0x5a0decd9b010
+[file] counter = 200, address = 0x5a0decd9b010
+aman@aman-HP-250-G8-Notebook-PC:~/Desktop/Linux_Foundation_Kernel_Basics/Linux_Foundation_Kernel_Basics/Variable_Adv/shared_across_files$ 
