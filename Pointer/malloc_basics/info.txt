@@ -1,0 +1,38 @@
+/*************************************** Output **************************************************************/
+
+aman@aman-Alienware-m16-R1:~/Documents/Linux_Foundation_Kernel_Basics/Pointer/malloc_basics$ ./verify_heap_address 
+PID: 121640
+cptr address: 0x6320c8e45420
+sizeof pointer: 8 bytes
+
+Press Enter to check the /proc/121640/maps....
+
+/************************************** Memory Map ***********************************************************/
+
+aman@aman-Alienware-m16-R1:~/Documents/Linux_Foundation_Kernel_Basics/Pointer/malloc_basics$ cat /proc/121640/maps 
+6320b0c1d000-6320b0c1e000 r--p 00000000 08:02 22815036                   /home/aman/Documents/Linux_Foundation_Kernel_Basics/Pointer/malloc_basics/verify_heap_address
+6320b0c1e000-6320b0c1f000 r-xp 00001000 08:02 22815036                   /home/aman/Documents/Linux_Foundation_Kernel_Basics/Pointer/malloc_basics/verify_heap_address
+6320b0c1f000-6320b0c20000 r--p 00002000 08:02 22815036                   /home/aman/Documents/Linux_Foundation_Kernel_Basics/Pointer/malloc_basics/verify_heap_address
+6320b0c20000-6320b0c21000 r--p 00002000 08:02 22815036                   /home/aman/Documents/Linux_Foundation_Kernel_Basics/Pointer/malloc_basics/verify_heap_address
+6320b0c21000-6320b0c22000 rw-p 00003000 08:02 22815036                   /home/aman/Documents/Linux_Foundation_Kernel_Basics/Pointer/malloc_basics/verify_heap_address
+6320c8e45000-6320c8e66000 rw-p 00000000 00:00 0                          [heap]
+7a2724c00000-7a2724c28000 r--p 00000000 08:02 21524925                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7a2724c28000-7a2724dc0000 r-xp 00028000 08:02 21524925                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7a2724dc0000-7a2724e0e000 r--p 001c0000 08:02 21524925                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7a2724e0e000-7a2724e12000 r--p 0020d000 08:02 21524925                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7a2724e12000-7a2724e14000 rw-p 00211000 08:02 21524925                   /usr/lib/x86_64-linux-gnu/libc.so.6
+7a2724e14000-7a2724e21000 rw-p 00000000 00:00 0 
+7a2724f22000-7a2724f25000 rw-p 00000000 00:00 0 
+7a2724f43000-7a2724f45000 rw-p 00000000 00:00 0 
+7a2724f45000-7a2724f49000 r--p 00000000 00:00 0                          [vvar]
+7a2724f49000-7a2724f4b000 r--p 00000000 00:00 0                          [vvar_vclock]
+7a2724f4b000-7a2724f4d000 r-xp 00000000 00:00 0                          [vdso]
+7a2724f4d000-7a2724f4e000 r--p 00000000 08:02 21524716                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7a2724f4e000-7a2724f7d000 r-xp 00001000 08:02 21524716                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7a2724f7d000-7a2724f88000 r--p 00030000 08:02 21524716                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7a2724f88000-7a2724f8a000 r--p 0003b000 08:02 21524716                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7a2724f8a000-7a2724f8b000 rw-p 0003d000 08:02 21524716                   /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7a2724f8b000-7a2724f8c000 rw-p 00000000 00:00 0 
+7fff7c679000-7fff7c69b000 rw-p 00000000 00:00 0                          [stack]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]
+
