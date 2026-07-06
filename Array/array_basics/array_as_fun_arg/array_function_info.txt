@@ -1,0 +1,11 @@
+aman@aman-Latitude-3420:~/Documents/Linux_Foundation_Kernel_Basics/Array/array_basics/array_as_fun_arg$ ./array_function 
+In Main: 
+	Address of al: 0x7ffddc07ce60
+	sizeof(a1): 20 bytes
+
+In sum1:
+	Address of arr: 0x7ffddc07ce60
+	sizeof(arr): 8 bytes
+
+Sum = 15
+
