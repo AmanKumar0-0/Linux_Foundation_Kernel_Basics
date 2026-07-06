@@ -1,0 +1,4 @@
+aman@aman-Latitude-3420:~/Documents/Linux_Foundation_Kernel_Basics/Pointer/malloc_special_arguments$ ./malloc_zero 
+malloc(0) returned: 0x621f7dc4f010
+Not-NULL! Implementation returned unique pointer.
+
