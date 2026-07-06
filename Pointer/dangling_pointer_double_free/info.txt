@@ -1,0 +1,54 @@
+aman@aman-Latitude-3420:~/Documents/Linux_Foundation_Kernel_Basics/Pointer/dangling_pointer_double_free$ gcc dangling.c -o dangling -Wall
+dangling.c: In function ‘main’:
+dangling.c:23:39: warning: pointer ‘cptr’ may be used after ‘free’ [-Wuse-after-free]
+   23 |                 printf(" %c\n",*(cptr + i));    /*Data May stll be there */
+      |                                 ~~~~~~^~~~
+dangling.c:18:9: note: call to ‘free’ here
+   18 |         free(cptr);     /* Memory Deallocated */
+      |         ^~~~~~~~~~
+aman@aman-Latitude-3420:~/Documents/Linux_Foundation_Kernel_Basics/Pointer/dangling_pointer_double_free$ ls
+dangling  dangling.c
+aman@aman-Latitude-3420:~/Documents/Linux_Foundation_Kernel_Basics/Pointer/dangling_pointer_double_free$ ./dangling 
+Before Free....
+ A
+ B
+ C
+ D
+ E
+ F
+ G
+ H
+ I
+ J
+
+
+After Free (dangling pointer):
+ �
+ �
+ 1
+ 
+
+
+
+
+
+ �
+
+
+DANGER: data still visible because no one else claimed it.
+This is a dangling pointer - use after free bug! 
+aman@aman-Latitude-3420:~/Documents/Linux_Foundation_Kernel_Basics/Pointer/dangling_pointer_double_free$ 
+
+
+
+
+
+
+
+
+/======================== Remember ==========================================/
+1. Freeing the same variable twice will cause an error 
+	EX :-)
+		char *cptr = (char)malloc(10);
+		free(cptr);
+		free(cptr);	/* Double free - Crash */
