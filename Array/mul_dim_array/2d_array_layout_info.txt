@@ -1,0 +1,31 @@
+aman@aman-Latitude-3420:~/Documents/Linux_Foundation_Kernel_Basics/Array/mul_dim_array$ ./2d_array_layout 
+2D Array Memory Layout: 
+Total size: 80 bytes
+Expressed: 4 rows * 5 cols * 4 bytes = 80 bytes
+
+Contiguous memory addresses:
+a[0][0] =  1 at 0x7ffe8a0435d0
+a[0][1] =  2 at 0x7ffe8a0435d4
+a[0][2] =  3 at 0x7ffe8a0435d8
+a[0][3] =  4 at 0x7ffe8a0435dc
+a[0][4] =  5 at 0x7ffe8a0435e0
+a[1][0] =  6 at 0x7ffe8a0435e4
+a[1][1] =  7 at 0x7ffe8a0435e8
+a[1][2] =  8 at 0x7ffe8a0435ec
+a[1][3] =  9 at 0x7ffe8a0435f0
+a[1][4] = 10 at 0x7ffe8a0435f4
+a[2][0] = 11 at 0x7ffe8a0435f8
+a[2][1] = 12 at 0x7ffe8a0435fc
+a[2][2] = 13 at 0x7ffe8a043600
+a[2][3] = 14 at 0x7ffe8a043604
+a[2][4] = 15 at 0x7ffe8a043608
+a[3][0] = 16 at 0x7ffe8a04360c
+a[3][1] = 17 at 0x7ffe8a043610
+a[3][2] = 18 at 0x7ffe8a043614
+a[3][3] = 19 at 0x7ffe8a043618
+a[3][4] = 20 at 0x7ffe8a04361c
+
+Address differences:
+&a[0][1] - &a[0][0] = 4 bytes
+&a[1][0] - &a[0][4] = 4 bytes
+
