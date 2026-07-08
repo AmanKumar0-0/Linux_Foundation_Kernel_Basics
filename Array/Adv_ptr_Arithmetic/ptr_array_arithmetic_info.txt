@@ -1,0 +1,23 @@
+aman@aman-Latitude-3420:~/Documents/Linux_Foundation_Kernel_Basics/Array/Adv_ptr_Arithmetic$ ./ptr_array_arithmetic 
+Initial state:
+ptr = 0x7fffcf7de910, *ptr[0] = 1
+
+After ptr + 1: 
+ptr = 0x7fffcf7de924, *ptr[0] = 6
+Jumped 20 bytes (one row)
+
+After ptr - 1: 
+ptr = 0x7fffcf7de910, *ptr[0] = 1
+
+Looping with ptr++:
+Row 0 at 0x7fffcf7de910:  1 2 3 4 5
+Row 1 at 0x7fffcf7de924:  6 7 8 910
+Row 2 at 0x7fffcf7de938: 1112131415
+Row 3 at 0x7fffcf7de94c: 1617181920
+
+Loopint Backward with ptr--:
+Row 3:1617181920
+Row 2:1112131415
+Row 1: 6 7 8 910
+Row 0: 1 2 3 4 5
+
