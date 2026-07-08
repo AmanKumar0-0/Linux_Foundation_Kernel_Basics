@@ -1,0 +1,17 @@
+aman@aman-Latitude-3420:~/Documents/Linux_Foundation_Kernel_Basics/Array/ptr_to_array$ ./pointer_to_array 
+Pointer to array:
+ptr points to: 0x7ffc93e47ab0
+ptr[0][0] = 1
+
+After ptr+1:
+ptr now points to: 0x7ffc93e47ac4
+ptr[0][0] = 6 (second row, first element)
+
+Address jump: 20 bytes (entire row)
+
+Traversing all elements:
+ 1  2  3  4  5 
+ 6  7  8  9 10 
+11 12 13 14 15 
+16 17 18 19 20 
+aman@aman-Latitude-3420:~/Documents/Linux_Foundation_Kernel_Basics/Array/ptr_to_array
